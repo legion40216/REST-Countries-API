@@ -32,9 +32,7 @@
     
     function createsection1(l,data)
     {
-    
-    
-    
+      
     var elements=document.querySelector(".elements");
     var elements_container =document.querySelector(".elements_container");
     elements_container.innerHTML ="";
@@ -46,11 +44,14 @@
     
     
     }
+    console.log("exit")
     var namesCountry= document.querySelectorAll(".elements span:nth-child(1)");
     var Population=document.querySelectorAll(".elements span:nth-child(2)");
     var Region=document.querySelectorAll(".elements span:nth-child(3)")
     for(i=0; i<l;i++)
     {
+    console.log(i)
+    console.log(data[i].name.common)
     
     namesCountry[i].innerHTML=data[i].name.common
     Population[i].innerHTML="Population: "+data[i].population.toLocaleString()
@@ -263,8 +264,7 @@
     
     document.querySelector('select').addEventListener('change',()=> {
     var find= document.querySelector("select").value
-    console.log(find)
-    if(find==="All")
+      if(find==="All")
     {
       console.log("hello1")
     data=maindata
@@ -304,8 +304,7 @@
     shuffle(data);
     
     }
-    console.log(data.length)
-    
+       
     
     if(data.length===250){
     document.querySelector(".buttondiv").classList.remove("disable")
@@ -496,3 +495,6 @@
     }
     
     }
+    
+    
+    
