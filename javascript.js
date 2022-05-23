@@ -28,7 +28,7 @@
     }
     else{
     var maindata = data
-    
+    var btns=document.querySelector(".btnborder")
     
     function createsection1(l,data)
     {
@@ -40,6 +40,7 @@
     
     for(i=0; i<l;i++)
     {
+      
     elements_container.appendChild(elements.cloneNode(true));
     
     
@@ -96,11 +97,12 @@
     var sections= document.querySelector(".elements_container");
     function add()
     {
+      console.log("here")
     document.querySelector("section").classList.add("disable")
     sections.classList.remove("disable");
     document.querySelector(".search_nav").classList.remove("disable")
     document.querySelector(".buttondiv").classList.remove("disable");
-    
+    document.querySelector(".btn_container").innerHTML ="";
     }
     
     
@@ -113,23 +115,23 @@
     {
     document.querySelector(".flag").setAttribute("src",data[id].flags.png);               
     document.querySelector(".information  h2").innerText=data[id].name.common
-    document.querySelectorAll(".container_section2  p")[0].innerText=Object.values(data[id].name.nativeName)[0].official;
-    document.querySelectorAll(".container_section2  p")[1].innerText=data[id].population.toLocaleString()
-    document.querySelectorAll(".container_section2  p")[2].innerText=data[id].region
-    document.querySelectorAll(".container_section2  p")[3].innerText=data[id].subregion
-    document.querySelectorAll(".container_section2  p")[4].innerText=data[id].capital[0]
-    document.querySelectorAll(".container_section2  p")[5].innerText=data[id].tld[0]
-    document.querySelectorAll(".container_section2  p")[6].innerText=Object.values(data[id].currencies)[0].name;
-    document.querySelectorAll(".container_section2  p")[7].innerText=Object.values(data[id].languages).join(", ");
+    document.querySelectorAll(".container_section2  p")[0].innerText= Object.values(data[id].name.nativeName ?? "N/a" )[0].official 
+    document.querySelectorAll(".container_section2  p")[1].innerText=  data[id].population.toLocaleString() ?? "N/a" 
+    document.querySelectorAll(".container_section2  p")[2].innerText=  data[id].region ?? "N/a" 
+    document.querySelectorAll(".container_section2  p")[3].innerText= data[id].subregion ?? "N/a" 
+    document.querySelectorAll(".container_section2  p")[4].innerText= data[id].capital?.[0] ?? "N/a" 
+    document.querySelectorAll(".container_section2  p")[5].innerText=data[id].tld?.[0]?? "N/a" 
+    document.querySelectorAll(".container_section2  p")[6].innerText=Object.values(data[id].currencies ?? "N/a" )[0].name
+    document.querySelectorAll(".container_section2  p")[7].innerText= Object.values(data[id]?.languages ?? "").join(", ") 
                             
     //search for borders
     var btn=document.querySelector(".btnborder")
     document.querySelector(".btn_container").innerHTML ="";
-    
+    console.log("here3 ")
     if(data.length<250)
     {
-    console.log("less then 250")
-    if(typeof(data[id].borders)!=="undefined")
+   
+    if(data[id]?.borders?? undefined!==undefined)
      {
     var i;
     var k;
@@ -151,7 +153,7 @@
      
     }
     else{
-    document.querySelector(".btn_container").innerHTML="None";
+    document.querySelector(".btn_container").innerText="None";
     }
     document.querySelectorAll(".btnborder").forEach(element => {
          element.addEventListener("click", ()=> {
@@ -166,8 +168,8 @@
     
     //
     else{
-    console.log("more then 250")
-    if(typeof(data[id].borders)!=="undefined")
+
+    if(data[id]?.borders!==undefined)
      {
     var i;
     var k;
@@ -178,8 +180,7 @@
     
     if(data[k].cca3===data[id].borders[i])
     {
-    
-    
+      
     btn.setAttribute("id", k)
      btn.innerHTML=maindata[k].name.common;
     document.querySelector(".btn_container").appendChild(btn.cloneNode(true))
@@ -189,8 +190,10 @@
      
     }
     else{
-    document.querySelector(".btn_container").innerHTML="None";
+      
+    document.querySelector(".btn_container").innerText="None";
     }
+    //
     document.querySelectorAll(".btnborder").forEach(element => {
          element.addEventListener("click", ()=> {
      
@@ -258,15 +261,21 @@
     {
     
     var options=document.createElement("option")
-    document.querySelector("select").appendChild(options).innerHTML=data2[i]
+    var newArray = maindata.filter(function (el) {
+      return el.region === data2[i]
+           
+      })
+    document.querySelector("select")
+    .appendChild(options).innerHTML=data2[i]+" "+"("+newArray.length+")"
     
+
     }
     
     document.querySelector('select').addEventListener('change',()=> {
     var find= document.querySelector("select").value
+    find=find.replace(/ .*/,"")
       if(find==="All")
     {
-      console.log("hello1")
     data=maindata
     createsection1(8,data)
     document.querySelector(".buttondiv").classList.remove("disable")
@@ -370,11 +379,12 @@
     
      });
     //
-    
+  
     
     //back button of section2
     document.querySelector(".btn-primary").addEventListener("click", ()=> {
-    
+      console.log("here2")
+           document.querySelector(".btn_container").appendChild(btns.cloneNode(true))
     document.querySelector("section").classList.add("disable")
     sections.classList.remove("disable");
     document.querySelector(".search_nav").classList.remove("disable")
@@ -449,20 +459,21 @@
     document.querySelector(".search_bar").classList.toggle("lightmodeElementBg");
     document.querySelector(".search_bar").classList.toggle("lightmodesearchText");
     
-    var imgsrc=document.querySelector("span img").getAttribute("src")
-    if(imgsrc.indexOf("moon-6689 (1).svg")!= -1)
+    var imgsrc=document.querySelector(".theme_wrapper img").getAttribute("src")
+    if(imgsrc.indexOf("sunny-outline.svg")!= -1)
     {
-    document.querySelector("span img").setAttribute("src","moon-outline.svg")
+    document.querySelector(".theme_wrapper img").setAttribute("src","moon-outline.svg")
     document.querySelector(".textbar img").setAttribute("src","search.svg")
-    
+    document.querySelector(".theme_wrapper span").innerText="Dark Mode"
     }
     else{
-    document.querySelector("span img").setAttribute("src","moon-6689 (1).svg")
+    document.querySelector(".theme_wrapper img").setAttribute("src","sunny-outline.svg")
     document.querySelector(".textbar img").setAttribute("src","search-outline.svg")
+    document.querySelector(".theme_wrapper span").innerText="Light Mode"
     }
     
-    
-    
+  
+  
     for (let element of  document.querySelectorAll("span")) { 
     element.classList.toggle("lightmodeText");
       
@@ -490,9 +501,16 @@
      document.querySelector("body").classList.toggle("lightmodeBg")
     
      for (var element of document.querySelectorAll("i")) { 
-        element.classList.toggle("lightmodeFontawesome")
+        element.classList.toggle("lightmodeText")
+      
        
     }
+
+    for (var element of document.querySelectorAll(".btna-z")) { 
+      element.classList.toggle("lightmodeText")
+      element.classList.toggle ("lightmodeElementBg")
+     
+  }
     
     }
     

@@ -255,12 +255,13 @@ color: hsl(0, 0%, 100%);
 
  .btna-z:hover
  {
-  background-color: rgba(179, 182, 182, 0.692);
- }
+  box-shadow: 0px 0px 4px 0.1px hsl(209deg 2% 71%);
+}
+
 
  .btna-z{
   padding: 5px 1px 5px 7px;
-background-color: rgba(167, 170, 170, 0.459);
+background-color: rgb(43 57 69);;
 margin-right: 5px;
 cursor: pointer;
 border-radius: 2px;
@@ -311,6 +312,11 @@ section{
   top: 12px;
   left: 12px;
 }
+.theme_wrapper{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 /* mobile layout */
 
@@ -343,7 +349,9 @@ section{
 .information{
   width: auto;
 }
-
+nav{
+  padding: 0 20px
+}
 }
 /* lightmode colors */
 .lightmodeText{
