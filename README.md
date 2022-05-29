@@ -82,7 +82,7 @@ for event listeners to react to changes made in the.
 ```html
 <input type="text">
 ```
-This event is similar to the **onchange** event. The difference is that the oninput event occurs immediately after the value of an element has changed, while onchange occurs when the element loses focus, after the content has been changed. The other difference is that the onchange event also works on <select> elements.
+This event is similar to the onchange event. The difference is that the oninput event occurs immediately after the value of an element has changed, while onchange occurs when the element loses focus, after the content has been changed. The other difference is that the onchange event also works on <select> elements.
 
 
 
