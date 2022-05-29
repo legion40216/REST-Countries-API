@@ -73,10 +73,6 @@ To see how you can add code snippets, see below:
 the syntax for reacting to changes made in the input field known as "oninput" or "input"
 ```js
 addEventListener("input", myScript)
-includes(value)
-(e)=> {
-e.target
-}
 ```
 for event listeners to react to changes made in the `<input type="text">`
 
