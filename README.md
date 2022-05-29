@@ -69,7 +69,7 @@ To see how you can add code snippets, see below:
   color: papayawhip;
 }
 ```
-
+his event is similar to the onchange event. The difference is that the oninput event occurs immediately after the value of an element has changed, while onchange occurs when the element loses focus, after the content has been changed. The other difference is that the onchange event also works on <select> elements.
 the syntax for reacting to changes made in the input field known as "oninput" or "input"
 ```js
 addEventListener("input", myScript)
@@ -78,14 +78,9 @@ includes(value)
 e.target
 }
 ```
-for event listeners to react to changes made in the.
-```html
-<input type="text">
-```
-This event is similar to the onchange event. The difference is that the oninput event occurs immediately after the value of an element has changed, while onchange occurs when the element loses focus, after the content has been changed. The other difference is that the onchange event also works on <select> elements.
+for event listeners to react to changes made in the `<input type="text">`
 
-
-
+T
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
