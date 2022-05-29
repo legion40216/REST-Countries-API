@@ -70,10 +70,28 @@ To see how you can add code snippets, see below:
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+ document.querySelector("input").addEventListener("input", (e)=> {
+    const value=e.target.value.toLowerCase()
+    
+    var newArray = maindata.filter(function (el) {
+    return el.name.common.toLowerCase().includes(value)
+         
+    })
 }
 ```
+the syntax for reacting to changes made in the input field known as "oninput" or "input"
+```js
+addEventListener("input", myScript)
+```
+for the
+```html
+<input type="text">
+```
+This event is similar to the **onchange** event. The difference is that the oninput event occurs immediately after the value of an element has changed, while onchange occurs when the element loses focus, after the content has been changed. The other difference is that the onchange event also works on <select> elements.
+for event listeners to react to changes made in the
+
+
+
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
