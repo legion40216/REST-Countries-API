@@ -69,19 +69,14 @@ To see how you can add code snippets, see below:
   color: papayawhip;
 }
 ```
-```js
- document.querySelector("input").addEventListener("input", (e)=> {
-    const value=e.target.value.toLowerCase()
-    
-    var newArray = maindata.filter(function (el) {
-    return el.name.common.toLowerCase().includes(value)
-         
-    })
-}
-```
+
 the syntax for reacting to changes made in the input field known as "oninput" or "input"
 ```js
 addEventListener("input", myScript)
+includes(value)
+(e)=> {
+e.target
+}
 ```
 for the
 ```html
