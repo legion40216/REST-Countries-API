@@ -30,16 +30,17 @@ Users should be able to:
 - Toggle the color scheme between light and dark mode *(optional)*
 
 ### Screenshot
--Homepage
+- Homepage
+
 ![image](https://user-images.githubusercontent.com/47054385/173209568-8ca7a811-c3f5-4372-8b5e-2479ec613be8.png)
 
--Details page
+- Details page
+
 ![image](https://user-images.githubusercontent.com/47054385/173209580-810d7588-2d85-4e14-8aec-bb0bfcd75043.png)
 
 ### Links
 
-- Solution URL: [Avdd solution URL here] (https://legion40216.github.io/REST-Countries-API/)
-- Live Site URL: [Add live site URL here] https://legion40216.github.io/REST-Countries-API/
+- Live Site URL: https://legion40216.github.io/REST-Countries-API/
 
 ## My process
 
