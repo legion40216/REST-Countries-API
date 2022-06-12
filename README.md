@@ -30,20 +30,15 @@ Users should be able to:
 - Toggle the color scheme between light and dark mode *(optional)*
 
 ### Screenshot
+-Homepage
+![image](https://user-images.githubusercontent.com/47054385/173209568-8ca7a811-c3f5-4372-8b5e-2479ec613be8.png)
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+-Details page
+![image](https://user-images.githubusercontent.com/47054385/173209580-810d7588-2d85-4e14-8aec-bb0bfcd75043.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Avdd solution URL here] (https://legion40216.github.io/REST-Countries-API/)
 - Live Site URL: [Add live site URL here] https://legion40216.github.io/REST-Countries-API/
 
 ## My process
